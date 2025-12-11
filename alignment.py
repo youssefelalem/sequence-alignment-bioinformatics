@@ -244,13 +244,13 @@ print("         ALIGNEMENT GLOBAL (Needleman-Wunsch)")
 print("="*60)
 
 # 1. Matrice Global
-matrix_global = score_matrix_alignement_global(seq1, seq2,5,-4,-1)
+matrix_global = score_matrix_alignement_global(seq1, seq2,1,0,-1)
 print("\n=== Matrice de score (Global) ===")
 tableau_alignement(seq1, seq2, matrix_global)
 print(f"\nScore final: {matrix_global[-1][-1]}")
 
 # 2. Backtracking Global
-align1_global, align2_global = backtracking_alignement_global(seq1, seq2, matrix_global,5,-4,-1)
+align1_global, align2_global = backtracking_alignement_global(seq1, seq2, matrix_global,1,0,-1)
 print("\n=== Alignement Global ===")
 print(f"Seq1: {align1_global}")
 print(f"Seq2: {align2_global}")
@@ -261,14 +261,14 @@ print("          ALIGNEMENT LOCAL (Smith-Waterman)")
 print("="*60)
 
 # 3. Matrice Local
-matrix_local, max_pos, max_score = score_matrix_alignement_local(seq1, seq2,5,-4,-1)
+matrix_local, max_pos, max_score = score_matrix_alignement_local(seq1, seq2,1,0,-1)
 print("\n=== Matrice de score (Local) ===")
 tableau_alignement(seq1, seq2, matrix_local)
 print(f"\nScore maximal: {max_score}")
 print(f"Position du score maximal: {max_pos}")
 
 # 4. Backtracking Local
-align1_local, align2_local = backtracking_alignement_local(seq1, seq2, matrix_local, max_pos,5,-4,-1)
+align1_local, align2_local = backtracking_alignement_local(seq1, seq2, matrix_local, max_pos,1,0,-1)
 print("\n=== Alignement Local ===")
 print(f"Seq1: {align1_local}")
 print(f"Seq2: {align2_local}")
